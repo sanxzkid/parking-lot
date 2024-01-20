@@ -17,10 +17,10 @@ class ParkingLotFast:
             return spot
         else:
             self.spots.append(car)
-            return len(self.empty_spots) - 1
+            return len(self.spots) - 1
         
     def unpark(self, id: int) -> int:
-        if self.spots[id] == None:
+        if id >= len(self.spots) or self.spots[id] == None:
             return -1
         self.spots[id] = None
         self.empty_spots.append(id)

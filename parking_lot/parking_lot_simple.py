@@ -13,7 +13,7 @@ class ParkingLot:
         return idx
         
     def unpark(self, id: int) -> int:
-        if id < 0 or id > len(self.spots) - 1 or self.spots[id] == None:
+        if id < 0 or id >= len(self.spots) or self.spots[id] is None:
             return -1
         self.spots[id] = None
         return id
